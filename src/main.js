@@ -1,3 +1,7 @@
+import { refs } from './js/refs';
+import { addTask, deleteTasks, initTasks } from './js/tasks';
+import { changeTheme, initTheme } from './js/theme-switcher';
+
 /*
   Створи список справ.
   На сторінці є два інпути які має вводиться назва і текст задачі.
@@ -14,3 +18,8 @@
       <p>Текст</p>
   </li>
 */
+initTheme();
+initTasks();
+refs.form.addEventListener('submit', addTask);
+refs.taskList.addEventListener('click', deleteTasks);
+refs.btnThemeToggle.addEventListener('click', changeTheme);
